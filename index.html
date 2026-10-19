@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Signed In</title>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Signed In</title>
 
     <style>
         * {
@@ -53,7 +54,7 @@
 
         /* Main Content */
         .container {
-            min-height: 75vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -74,34 +75,6 @@
             font-weight: bold;
             text-shadow: 1px 1px 4px black;
             line-height: 1.6;
-        }
-
-        /* Bigger Bottom Navigation */
-        .bottom-nav {
-            width: 100%;
-            min-height: 180px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .bottom-nav a {
-            text-decoration: none;
-            color: white;
-            background: #FF69B4;
-            padding: 16px 40px;
-            border-radius: 10px;
-            font-size: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .bottom-nav a:hover {
-            background: #FFB6C1;
-            color: black;
-            transform: scale(1.05);
         }
 
         /* Tablet Screens */
@@ -125,7 +98,7 @@
             }
 
             .container {
-                min-height: 70vh;
+                min-height: 85vh;
             }
         }
 
@@ -149,13 +122,9 @@
                 font-size: 16px;
             }
 
-            .bottom-nav {
-                min-height: 150px;
-            }
-
-            .bottom-nav a {
-                padding: 14px 30px;
-                font-size: 18px;
+            .container {
+                min-height: 85vh;
+                padding: 20px 15px;
             }
         }
     </style>
@@ -163,7 +132,7 @@
 
 <body>
 
-    <!-- Top Navigation -->
+    <!-- Navigation Bar -->
     <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -175,16 +144,12 @@
     <!-- Main Content -->
     <div class="container">
         <h1>WELCOME! PERFUME LOVERS</h1>
+
         <p>
             Step into the world of SWEET SCENT,
             ELEGANCE, AND CONFIDENCE.
         </p>
     </div>
-
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-        <a href="login.html">Log Out</a>
-    </nav>
 
 </body>
 </html>
