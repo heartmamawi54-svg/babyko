@@ -1,117 +1,296 @@
-<DOCTYPE html>
- <html lang="en">
- <head>
- <title>LOGIN FORM </title>
- <style> 
-  * {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Form | SWEET SCENT</title>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
-			
         }
+
+        /* Page Background */
         body {
-		    margin: 0;
-            height: 100vh;
+            min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
-			background-color: #ffc0cb;
+            padding: 20px;
+            background-color: #ffc0cb;
+            background-image: url("1000.jpg");
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
+
+        /* Login Box */
         .login-box {
-            width: 350px;
+            width: 100%;
+            max-width: 380px;
             padding: 35px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 15px;
             text-align: center;
             color: black;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
-        /* Style for your new logo */
+
+        /* Logo */
         .login-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 60%;
-            margin-bottom: 25px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 20px;
             object-fit: cover;
         }
+
+        /* Heading */
         h1 {
             margin-bottom: 25px;
-            margin-top: 0;
-            font-size: 24px;
+            font-size: 28px;
+            overflow-wrap: anywhere;
         }
-        input {
+
+        /* Input Fields */
+        .input-group {
             width: 100%;
-            padding: 13px;
-            margin: 10px 0;
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.5);
+            margin-bottom: 15px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.8);
             border-radius: 8px;
             color: black;
             outline: none;
+            font-size: 16px;
         }
+
         input::placeholder {
-            color: black;
+            color: #333;
         }
+
+        input:focus {
+            border-color: #F527D6;
+            box-shadow: 0 0 5px rgba(245, 39, 214, 0.5);
+        }
+
+        /* Login Button */
         button {
             width: 100%;
-            padding: 13px;
-            margin-top: 15px;
+            padding: 14px;
+            margin-top: 8px;
             background: #F527D6;
-            color: black;
+            color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
+        button:hover {
+            background: #d91bb8;
+            transform: translateY(-2px);
+        }
 
-</style>
-<div class="login-container">
-		<form action="index.html" method="
-    <div class="login-container">
-	<div class="login-box">
-        <!-- Logo added here. Replace 'logo.png' with your actual image path -->
-        <img src="30.jpg" alt="Logo" class="login-logo"
-        <form id="loginForm" class="login-form">
-          
+        button:focus-visible {
+            outline: 3px solid black;
+            outline-offset: 3px;
+        }
 
-            <div id="loginSection" class="login-container">
-		<h2><big>Login</big></h2>
-        <div class="input-group">
-            <input type="text" id="username" placeholder="Enter username">
-        </div>
-        <div class="input-group">
-            <input type="password" id="password" placeholder="Enter password">
-        </div>
-        <button class="btn btn-success" onclick="validateLogin()">Login</button>
-        <div id="errorMsg" class="error-message"></div>
-    </div>
-	
-	 <script>
-        // Form Validation & Initial Login
-        function validateLogin() {
-            var user = document.getElementById("username").value;
-            var pass = document.getElementById("password").value;
-            var error = document.getElementById("errorMsg");
-            
-            if (user === "heart" && pass === "1234") {
-                error.style.display = "none";
-                navigateTo('homepage');
-                
-                // Optional: Clear form inputs on success
-                document.getElementById("username").value = "";
-                document.getElementById("password").value = "";
-            } else {
-                error.style.display = "block";
+        /* Error Message */
+        .error-message {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 0, 0, 0.12);
+            color: #9b0000;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .login-box {
+                max-width: 360px;
+                padding: 30px;
+            }
+
+            .login-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            h1 {
+                font-size: 26px;
             }
         }
-		
- </script>
- 
+
+        /* Mobile Phone */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .login-box {
+                width: 100%;
+                max-width: 340px;
+                padding: 25px 20px;
+                border-radius: 12px;
+            }
+
+            .login-logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            input {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 13px;
+                font-size: 16px;
+            }
+        }
+
+        /* Very Small Screens */
+        @media (max-width: 320px) {
+            body {
+                padding: 10px;
+            }
+
+            .login-box {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 21px;
+            }
+
+            .login-logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Short Screens / Landscape Phones */
+        @media (max-height: 500px) {
+            body {
+                align-items: flex-start;
+            }
+
+            .login-box {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .login-logo {
+                width: 55px;
+                height: 55px;
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Form -->
+    <div class="login-box">
+
+        <img src="30.jpg" alt="Perfume Collection Logo"
+             class="login-logo">
+
+        <h1>WELCOME BACK!</h1>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    aria-label="Username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    aria-label="Password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <button type="submit">Login</button>
+
+            <p
+                id="errorMsg"
+                class="error-message"
+                role="alert"
+                aria-live="polite"
+            ></p>
+
+        </form>
+    </div>
+
+    <!-- Login Validation -->
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const errorMsg = document.getElementById("errorMsg");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const user = document.getElementById("username").value.trim();
+            const pass = document.getElementById("password").value;
+
+            if (user === "heart" && pass === "1234") {
+                errorMsg.style.display = "none";
+
+                // Go to the homepage after successful login
+                window.location.href = "index.html";
+            } else {
+                errorMsg.textContent =
+                    "Incorrect username or password. Please try again.";
+
+                errorMsg.style.display = "block";
+            }
+        });
+    </script>
+
 </body>
 </html>
