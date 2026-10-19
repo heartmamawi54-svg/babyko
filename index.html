@@ -15,7 +15,7 @@
             background-image: url("1000.jpg");
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 100vh;
             color: pink;
         }
 
@@ -23,8 +23,10 @@
         nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 25px;
             padding: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -43,13 +45,14 @@
 
         /* Main Content */
         .container {
-            height: 80vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background: rgba(0, 0, 0, 0.25);
+            padding: 30px;
         }
 
         h1 {
@@ -63,25 +66,93 @@
             font-weight: bold;
             text-shadow: 1px 1px 4px black;
         }
+
+        /* Bigger Bottom Section */
+        .bottom-nav {
+            min-height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Bigger Log Out Button */
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            background: #FF69B4;
+            padding: 20px 50px;
+            border-radius: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #FFB6C1;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                padding: 10px 14px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .container {
+                min-height: 70vh;
+            }
+
+            .bottom-nav {
+                min-height: 180px;
+            }
+
+            .bottom-nav a {
+                padding: 18px 40px;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Top Navigation -->
     <nav>
-        <a href="index.html">index</a>
-        <a href="about.html"> About</a>
+        <a href="index.html">Index</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-		<a href="product.html">Product</a>
-		<a href="login.html">login</a>
+        <a href="product.html">Product</a>
+        <a href="login.html">Login</a>
     </nav>
 
+    <!-- Main Content -->
     <div class="container">
         <h1>WELCOME! PERFUME LOVERS</h1>
-        <p>step into world of SWEET SCENT, ELEGANCE,AND CONFIDENT. </p>
+        <p>
+            Step into world of SWEET SCENT,
+            ELEGANCE, AND CONFIDENCE.
+        </p>
     </div>
-<nav>
-<a href="login.html">log out</a>
-</nav>
+
+    <!-- Bigger Bottom Section -->
+    <nav class="bottom-nav">
+        <a href="login.html">Log Out</a>
+    </nav>
+
 </body>
 </html>
