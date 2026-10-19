@@ -3,6 +3,8 @@
 <head>
     <title>Signed In</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         * {
             margin: 0;
@@ -15,44 +17,50 @@
             background-image: url("1000.jpg");
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             min-height: 100vh;
             color: pink;
         }
 
-        /* Navigation Bar */
-        nav {
+        /* Top Navigation Bar */
+        .top-nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
-            padding: 20px;
+            gap: 12px;
+            padding: 15px 20px;
+            width: 100%;
             flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.35);
         }
 
-        nav a {
+        .top-nav a {
             text-decoration: none;
             color: white;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 10px 18px;
             border-radius: 8px;
+            font-size: 15px;
             font-weight: bold;
+            white-space: nowrap;
+            transition: 0.3s;
         }
 
-        nav a:hover {
+        .top-nav a:hover {
             background: #FFB6C1;
             color: black;
         }
 
         /* Main Content */
         .container {
-            min-height: 80vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background: rgba(0, 0, 0, 0.25);
-            padding: 30px;
+            padding: 30px 20px;
         }
 
         h1 {
@@ -65,26 +73,27 @@
             font-size: 20px;
             font-weight: bold;
             text-shadow: 1px 1px 4px black;
+            line-height: 1.6;
         }
 
-        /* Bigger Bottom Section */
+        /* Bigger Bottom Navigation */
         .bottom-nav {
+            width: 100%;
             min-height: 180px;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.6);
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.7);
         }
 
-        /* Bigger Log Out Button */
         .bottom-nav a {
             text-decoration: none;
             color: white;
             background: #FF69B4;
-            padding: 20px 50px;
-            border-radius: 12px;
-            font-size: 24px;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-size: 20px;
             font-weight: bold;
             transition: 0.3s;
         }
@@ -95,35 +104,58 @@
             transform: scale(1.05);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            nav {
-                gap: 10px;
+        /* Tablet Screens */
+        @media (max-width: 768px) {
+            .top-nav {
+                gap: 8px;
+                padding: 12px 10px;
             }
 
-            nav a {
-                padding: 10px 14px;
+            .top-nav a {
+                padding: 9px 12px;
+                font-size: 14px;
             }
 
             h1 {
-                font-size: 30px;
+                font-size: 34px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .container {
+                min-height: 70vh;
+            }
+        }
+
+        /* Mobile Screens */
+        @media (max-width: 480px) {
+            .top-nav {
+                gap: 8px;
+                padding: 12px 8px;
+            }
+
+            .top-nav a {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 28px;
             }
 
             p {
                 font-size: 16px;
             }
 
-            .container {
-                min-height: 70vh;
-            }
-
             .bottom-nav {
-                min-height: 180px;
+                min-height: 150px;
             }
 
             .bottom-nav a {
-                padding: 18px 40px;
-                font-size: 20px;
+                padding: 14px 30px;
+                font-size: 18px;
             }
         }
     </style>
@@ -132,7 +164,7 @@
 <body>
 
     <!-- Top Navigation -->
-    <nav>
+    <nav class="top-nav">
         <a href="index.html">Index</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -144,12 +176,12 @@
     <div class="container">
         <h1>WELCOME! PERFUME LOVERS</h1>
         <p>
-            Step into world of SWEET SCENT,
+            Step into the world of SWEET SCENT,
             ELEGANCE, AND CONFIDENCE.
         </p>
     </div>
 
-    <!-- Bigger Bottom Section -->
+    <!-- Bottom Navigation -->
     <nav class="bottom-nav">
         <a href="login.html">Log Out</a>
     </nav>
